@@ -1,0 +1,243 @@
+.contact-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background */
+.contact-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  min-width: 100vw;
+}
+
+.contact-hero-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  min-width: 100vw;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.contact-hero-overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 48, 54, 0.65);
+  z-index: 1;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 2;
+}
+
+/* Navigation Bar */
+.contact-hero-nav {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 12vh;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.contact-nav-container {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.contact-nav-logo {
+  flex-shrink: 0;
+}
+
+.contact-nav-logo img {
+  height: 105px;
+  width: auto;
+  display: block;
+}
+
+.contact-nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-nav-links {
+  display: flex;
+  gap: 2.25rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.contact-nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease;
+}
+
+.contact-nav-link:hover {
+  color: #C9A24B;
+}
+
+.contact-nav-link-active {
+  color: #C9A24B;
+  font-weight: 600;
+}
+
+.contact-nav-phone-section {
+  background-color: #C9A24B;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+
+.contact-nav-phone-button {
+  background-color: transparent;
+  color: #3A3A3A;
+  text-decoration: none;
+  padding: 0.9rem 1.75rem;
+  border-radius: 6px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  border: none;
+}
+
+.contact-nav-phone-button:hover {
+  opacity: 0.9;
+}
+
+/* Hero Content */
+.contact-hero-content {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.contact-hero-content-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.contact-hero-title {
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-hero-nav {
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .contact-nav-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-nav-right-group {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .contact-nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-nav-phone-section {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 2rem;
+  }
+
+  .contact-hero-title {
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-nav-container {
+    padding: 0 1rem;
+  }
+
+  .contact-hero-content-container {
+    padding: 0 1rem;
+  }
+
+  .contact-hero-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  .contact-hero-content {
+    padding: 1.5rem 0;
+  }
+
+  .contact-hero-section {
+    min-height: 35vh;
+  }
+}
