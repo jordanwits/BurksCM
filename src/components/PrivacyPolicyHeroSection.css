@@ -1,0 +1,238 @@
+.privacy-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background */
+.privacy-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  min-width: 100vw;
+}
+
+.privacy-hero-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  min-width: 100vw;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.privacy-hero-overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(50, 46, 42, 0.8);
+  z-index: 1;
+}
+
+.privacy-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 2;
+}
+
+/* Navigation Bar */
+.privacy-hero-nav {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 12vh;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.privacy-nav-container {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.privacy-nav-logo {
+  flex-shrink: 0;
+}
+
+.privacy-nav-logo img {
+  height: 105px;
+  width: auto;
+  display: block;
+}
+
+.privacy-nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.privacy-nav-links {
+  display: flex;
+  gap: 2.25rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.privacy-nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease;
+}
+
+.privacy-nav-link:hover {
+  color: #C9A24B;
+}
+
+.privacy-nav-phone-section {
+  background-color: #C9A24B;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+
+.privacy-nav-phone-button {
+  background-color: transparent;
+  color: #3A3A3A;
+  text-decoration: none;
+  padding: 0.9rem 1.75rem;
+  border-radius: 6px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  border: none;
+}
+
+.privacy-nav-phone-button:hover {
+  opacity: 0.9;
+}
+
+/* Hero Content */
+.privacy-hero-content {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.privacy-hero-content-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.privacy-hero-title {
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-hero-nav {
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .privacy-nav-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .privacy-nav-right-group {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .privacy-nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .privacy-nav-phone-section {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 2rem;
+  }
+
+  .privacy-hero-title {
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-nav-container {
+    padding: 0 1rem;
+  }
+
+  .privacy-hero-content-container {
+    padding: 0 1rem;
+  }
+
+  .privacy-hero-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+  }
+
+  .privacy-hero-content {
+    padding: 1.5rem 0;
+  }
+
+  .privacy-hero-section {
+    min-height: 35vh;
+  }
+}

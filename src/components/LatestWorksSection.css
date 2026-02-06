@@ -163,6 +163,10 @@
   pointer-events: none;
 }
 
+.latest-works-slide.no-overlay::after {
+  display: none;
+}
+
 .latest-works-overlay {
   position: absolute;
   left: 50%;

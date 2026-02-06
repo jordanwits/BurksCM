@@ -2,6 +2,14 @@ import React from 'react'
 import './ContactDetailsSection.css'
 
 const ContactDetailsSection = () => {
+  const handleAppointmentClick = (e) => {
+    e.preventDefault()
+    const appointmentSection = document.getElementById('appointment')
+    if (appointmentSection) {
+      appointmentSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }
+
   return (
     <section className="contact-details-section">
       <div className="contact-details-container">
@@ -27,7 +35,7 @@ const ContactDetailsSection = () => {
               <span className="contact-info-value">ryan@burkscm.com</span>
             </div>
             
-            <a href="#appointment" className="contact-appointment-button">
+            <a href="#appointment" className="contact-appointment-button" onClick={handleAppointmentClick}>
               GET APPOINTMENT
             </a>
           </div>

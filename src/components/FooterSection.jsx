@@ -126,24 +126,24 @@ const FooterSection = () => {
               Copyright © {year} Burks Construction Management
             </div>
             <div className="footer-legal-line">
-              <a className="footer-link footer-legal-link" href="#">
+              <Link className="footer-link footer-legal-link" to="/privacy-policy">
                 Privacy Policy
-              </a>{' '}
+              </Link>{' '}
               <span className="footer-sep">|</span>{' '}
-              <a className="footer-link footer-legal-link" href="#">
+              <Link className="footer-link footer-legal-link" to="/terms-of-service">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
 
           <div className="footer-social" aria-label="Social links">
-            <a className="footer-social-link" href="#" aria-label="Facebook">
+            <a className="footer-social-link" href="https://www.facebook.com/BurksCM/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebookF />
             </a>
-            <a className="footer-social-link" href="#" aria-label="Instagram">
+            <a className="footer-social-link" href="https://www.instagram.com/burks_cm/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram />
             </a>
-            <a className="footer-social-link" href="#" aria-label="LinkedIn">
+            <a className="footer-social-link" href="https://www.linkedin.com/in/ryan-burks-0a5a83301/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedinIn />
             </a>
           </div>

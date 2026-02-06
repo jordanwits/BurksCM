@@ -90,7 +90,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(44, 48, 54, 0.65); /* Darken hero more than nav */
+  background: rgba(50, 46, 42, 0.7); /* Darken hero more than nav */
   z-index: 1;
 }
 
@@ -112,7 +112,7 @@
   min-height: 12vh; /* Taller nav bar */
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.15); /* Light bar without glass effect */
+  background: rgba(255, 255, 255, 0.08); /* Light bar without glass effect */
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 

@@ -13,7 +13,7 @@ const DEFAULT_CLIENT_LOGOS = [
 
 const ClientsSection = ({
   logos = DEFAULT_CLIENT_LOGOS,
-  durationSeconds = 26,
+  durationSeconds = 24,
   title = 'Our Clients',
   kicker = 'Trust and Worth',
 }) => {

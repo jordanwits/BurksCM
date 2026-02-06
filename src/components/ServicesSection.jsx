@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './ServicesSection.css'
 
 // Map service titles to image filenames
@@ -90,6 +91,18 @@ const SERVICES = [
 ]
 
 const ServicesSection = () => {
+  const navigate = useNavigate()
+
+  const handleViewAllClick = (e) => {
+    e.preventDefault()
+    // Navigate to services page
+    navigate('/services')
+    // Scroll to top of page after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 100)
+  }
+
   return (
     <section className="services-section" aria-label="Services we offer">
       <div className="services-container">
@@ -99,7 +112,7 @@ const ServicesSection = () => {
             <div className="services-title">Services We Offer</div>
           </div>
 
-          <a className="services-view-all" href="#">
+          <a className="services-view-all" href="/services" onClick={handleViewAllClick}>
             VIEW ALL
           </a>
         </div>

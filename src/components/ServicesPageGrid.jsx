@@ -91,7 +91,7 @@ const SERVICES = [
 
 const ServicesPageGrid = () => {
   return (
-    <section className="services-page-grid-section" aria-label="Services we offer">
+    <section id="services-content" className="services-page-grid-section" aria-label="Services we offer">
       <div className="services-page-grid-container">
         <div className="services-page-grid-header">
           <div className="services-page-grid-subtitle">Our Services</div>

@@ -7,7 +7,7 @@ const GetInTouchSection = () => {
   }
 
   return (
-    <section className="get-in-touch-section" aria-label="Get in touch">
+    <section id="appointment" className="get-in-touch-section" aria-label="Get in touch">
       <div className="get-in-touch-container">
         <div className="get-in-touch-divider" />
 
