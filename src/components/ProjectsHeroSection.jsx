@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './ProjectsHeroSection.css'
 
 const ProjectsHeroSection = () => {
   const navigate = useNavigate()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault()
@@ -39,24 +40,65 @@ const ProjectsHeroSection = () => {
 
       {/* Navigation Bar */}
       <nav className="projects-hero-nav">
+        {mobileMenuOpen && (
+          <div 
+            className="projects-mobile-menu-backdrop" 
+            onClick={() => setMobileMenuOpen(false)}
+          ></div>
+        )}
         <div className="projects-nav-container">
           <div className="projects-nav-logo">
-            <Link to="/">
+            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
               <img 
                 src="/assets/BurksLogo.png" 
                 alt="Burks Construction Management Logo" 
               />
             </Link>
           </div>
-          <div className="projects-nav-right-group">
+          <button 
+            className="projects-mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            <span className={`projects-hamburger ${mobileMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+          <div className={`projects-nav-right-group ${mobileMenuOpen ? 'mobile-open' : ''}`}>
             <div className="projects-nav-links">
-              <Link to="/" className="projects-nav-link">Home</Link>
-              <Link to="/projects" className="projects-nav-link projects-nav-link-active">Projects</Link>
-              <Link to="/services" className="projects-nav-link">Services</Link>
-              <Link to="/contact" className="projects-nav-link">Contact Us</Link>
+              <Link 
+                to="/" 
+                className="projects-nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                to="/projects" 
+                className="projects-nav-link projects-nav-link-active"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Projects
+              </Link>
+              <Link 
+                to="/services" 
+                className="projects-nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Services
+              </Link>
+              <Link 
+                to="/contact" 
+                className="projects-nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
             </div>
             <div className="projects-nav-phone-section">
-              <a href="tel:5303550923" className="projects-nav-phone-button">
+              <a href="tel:5303550923" className="projects-nav-phone-button" onClick={() => setMobileMenuOpen(false)}>
                 (530) 355-0923
               </a>
             </div>

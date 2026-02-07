@@ -7,6 +7,7 @@ const HeroSection = () => {
   const navigate = useNavigate()
   const isHomePage = location.pathname === '/'
   const [videoLoaded, setVideoLoaded] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault()
@@ -69,24 +70,65 @@ const HeroSection = () => {
 
       {/* Navigation Bar */}
       <nav className="hero-nav">
+        {mobileMenuOpen && (
+          <div 
+            className="mobile-menu-backdrop" 
+            onClick={() => setMobileMenuOpen(false)}
+          ></div>
+        )}
         <div className="nav-container">
           <div className="nav-logo">
-            <Link to="/">
+            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
               <img 
                 src="/assets/BurksLogo.png" 
                 alt="Burks Construction Management Logo" 
               />
             </Link>
           </div>
-          <div className="nav-right-group">
+          <button 
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+          <div className={`nav-right-group ${mobileMenuOpen ? 'mobile-open' : ''}`}>
             <div className="nav-links">
-              <Link to="/" className={`nav-link ${isHomePage ? 'active' : ''}`}>Home</Link>
-              <Link to="/projects" className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}>Projects</Link>
-              <Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}>Services</Link>
-              <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact Us</Link>
+              <Link 
+                to="/" 
+                className={`nav-link ${isHomePage ? 'active' : ''}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                to="/projects" 
+                className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Projects
+              </Link>
+              <Link 
+                to="/services" 
+                className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Services
+              </Link>
+              <Link 
+                to="/contact" 
+                className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
             </div>
             <div className="nav-phone-section">
-              <a href="tel:5303550923" className="nav-phone-button">
+              <a href="tel:5303550923" className="nav-phone-button" onClick={() => setMobileMenuOpen(false)}>
                 (530) 355-0923
               </a>
             </div>

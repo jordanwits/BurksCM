@@ -213,6 +213,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .latest-works-slide {
+    flex-basis: 100%;
+  }
+}
+
 @media (max-width: 620px) {
   .latest-works-section {
     padding: 64px 0 76px;
@@ -223,7 +229,7 @@
   }
 
   .latest-works-slide {
-    flex-basis: 78%;
+    flex-basis: 100%;
   }
 
   .latest-works-image {
