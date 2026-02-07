@@ -104,7 +104,7 @@ const ServicesSection = () => {
   }
 
   return (
-    <section className="services-section" aria-label="Services we offer">
+    <section id="services" className="services-section" aria-label="Services we offer">
       <div className="services-container">
         <div className="services-header">
           <div className="services-header-left">

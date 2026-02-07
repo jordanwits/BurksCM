@@ -18,11 +18,14 @@ const HeroSection = () => {
 
   const handleServicesClick = (e) => {
     e.preventDefault()
-    if (isHomePage) {
-      handleSmoothScroll(e, 'services')
-    } else {
-      navigate('/services')
-    }
+    navigate('/services')
+    window.scrollTo(0, 0)
+  }
+
+  const handleContactClick = (e) => {
+    e.preventDefault()
+    navigate('/contact')
+    window.scrollTo(0, 0)
   }
 
   const handleVideoLoad = () => {
@@ -79,7 +82,7 @@ const HeroSection = () => {
             <div className="nav-links">
               <Link to="/" className={`nav-link ${isHomePage ? 'active' : ''}`}>Home</Link>
               <Link to="/projects" className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}>Projects</Link>
-              <a href={isHomePage ? "#services" : "/services"} className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`} onClick={handleServicesClick}>Services</a>
+              <Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}>Services</Link>
               <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact Us</Link>
             </div>
             <div className="nav-phone-section">
@@ -103,8 +106,8 @@ const HeroSection = () => {
             With nearly a decade of experience, Burks Construction & Forestry Management specializes in overseeing large scale projects that enhance sustainability and drive development.
           </p>
           <div className="hero-buttons">
-            <button className="btn-primary">OUR SERVICES</button>
-            <button className="btn-secondary">CONTACT US</button>
+            <button className="btn-primary" onClick={handleServicesClick}>OUR SERVICES</button>
+            <button className="btn-secondary" onClick={handleContactClick}>CONTACT US</button>
           </div>
         </div>
       </div>

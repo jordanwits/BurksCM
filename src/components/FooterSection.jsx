@@ -10,21 +10,35 @@ const FooterSection = () => {
 
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault()
-    // If we're on projects page, navigate to home first, then scroll
-    if (location.pathname === '/projects') {
+    // If we're not on home page, navigate to home first, then scroll
+    if (location.pathname !== '/') {
       navigate('/')
       setTimeout(() => {
         const element = document.getElementById(targetId)
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        } else {
+          // Retry after longer delay if element not found
+          setTimeout(() => {
+            const retryElement = document.getElementById(targetId)
+            if (retryElement) {
+              retryElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
+          }, 300)
         }
-      }, 100)
+      }, 200)
     } else {
       const element = document.getElementById(targetId)
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
     }
+  }
+
+  const handlePageNavigation = (e, path) => {
+    e.preventDefault()
+    navigate(path)
+    window.scrollTo(0, 0)
   }
 
   const services = [
@@ -46,7 +60,7 @@ const FooterSection = () => {
   const quickLinks = [
     { label: 'Home', path: '/', isRoute: true },
     { label: 'Projects', path: '/projects', isRoute: true },
-    { label: 'Services', targetId: 'services', isRoute: false },
+    { label: 'Services', path: '/services', isRoute: true },
     { label: 'Contact Us', path: '/contact', isRoute: true },
   ]
 
@@ -100,6 +114,7 @@ const FooterSection = () => {
                     <Link 
                       className="footer-link" 
                       to={link.path}
+                      onClick={(e) => handlePageNavigation(e, link.path)}
                     >
                       {link.label}
                     </Link>
@@ -126,11 +141,19 @@ const FooterSection = () => {
               Copyright © {year} Burks Construction Management
             </div>
             <div className="footer-legal-line">
-              <Link className="footer-link footer-legal-link" to="/privacy-policy">
+              <Link 
+                className="footer-link footer-legal-link" 
+                to="/privacy-policy"
+                onClick={(e) => handlePageNavigation(e, '/privacy-policy')}
+              >
                 Privacy Policy
               </Link>{' '}
               <span className="footer-sep">|</span>{' '}
-              <Link className="footer-link footer-legal-link" to="/terms-of-service">
+              <Link 
+                className="footer-link footer-legal-link" 
+                to="/terms-of-service"
+                onClick={(e) => handlePageNavigation(e, '/terms-of-service')}
+              >
                 Terms of Service
               </Link>
             </div>
