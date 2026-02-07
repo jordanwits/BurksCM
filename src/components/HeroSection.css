@@ -42,12 +42,7 @@
   pointer-events: none;
 }
 
-/* Keep fallback visible on mobile devices */
-@media (max-width: 768px) {
-  .hero-fallback-image {
-    opacity: 1 !important;
-  }
-}
+/* Allow fallback to fade out on mobile when video is ready */
 
 /* If height is the limiting factor, adjust to cover height */
 @media (max-aspect-ratio: 16/9) {
@@ -80,6 +75,18 @@
   opacity: 1;
   visibility: visible;
   transition: opacity 0.5s ease, visibility 0s 0s;
+}
+
+/* On mobile, allow tapping the iframe (e.g. if autoplay is blocked) */
+@media (max-width: 768px) {
+  .hero-video {
+    pointer-events: auto;
+  }
+}
+
+.hero-overlay-dark,
+.hero-overlay {
+  pointer-events: none;
 }
 
 /* If height is the limiting factor, adjust to cover height */
@@ -401,6 +408,11 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Shorter hero section on home page for mobile */
+  .hero-section.home-page {
+    min-height: 70vh;
+  }
+
   .hero-nav {
     min-height: auto;
     padding: 0;

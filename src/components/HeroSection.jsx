@@ -45,11 +45,6 @@ const HeroSection = () => {
   }, [])
 
   const handleVideoLoad = () => {
-    // On mobile, keep fallback visible longer or don't hide it
-    if (isMobile) {
-      // On mobile, videos often don't autoplay, so keep fallback visible
-      return
-    }
     // Add a small delay to ensure video content is ready before hiding fallback
     setTimeout(() => {
       setVideoLoaded(true)
@@ -58,19 +53,16 @@ const HeroSection = () => {
 
   // Fallback timeout in case iframe onLoad doesn't fire
   useEffect(() => {
-    if (isMobile) {
-      // On mobile, don't hide fallback automatically
-      return
-    }
+    if (videoLoaded) return
     const timeout = setTimeout(() => {
       setVideoLoaded(true)
-    }, 5000) // Hide fallback after 5 seconds max
+    }, isMobile ? 8000 : 5000) // Mobile can be slower / block autoplay
 
     return () => clearTimeout(timeout)
-  }, [isMobile])
+  }, [isMobile, videoLoaded])
 
   return (
-    <section id="home" className="hero-section">
+    <section id="home" className={`hero-section ${isHomePage ? 'home-page' : ''}`}>
       {/* Video Background */}
       <div className="hero-background">
         {/* Fallback Image */}
@@ -79,18 +71,16 @@ const HeroSection = () => {
           alt="Construction site" 
           className={`hero-fallback-image ${videoLoaded ? 'fade-out' : ''}`}
         />
-        {!isMobile && (
-          <iframe
-            src="https://player.vimeo.com/video/1071096071?h=acd7363a02&muted=1&autoplay=1&loop=1&background=1&controls=0&playsinline=1"
-            className={`hero-video ${videoLoaded ? 'video-loaded' : ''}`}
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-            playsInline
-            title="Hero Background Video"
-            onLoad={handleVideoLoad}
-          ></iframe>
-        )}
+        <iframe
+          src="https://player.vimeo.com/video/1071096071?h=acd7363a02&muted=1&autoplay=1&loop=1&background=1&controls=0&playsinline=1"
+          className={`hero-video ${videoLoaded ? 'video-loaded' : ''}`}
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+          playsInline
+          title="Hero Background Video"
+          onLoad={handleVideoLoad}
+        ></iframe>
         <div className="hero-overlay-dark"></div>
         <div className="hero-overlay"></div>
       </div>
