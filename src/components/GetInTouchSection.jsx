@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './GetInTouchSection.css'
 
 const GetInTouchSection = () => {
@@ -70,9 +71,9 @@ const GetInTouchSection = () => {
                 />
                 <label className="get-in-touch-consent-text" htmlFor="get-in-touch-terms">
                   I agree to{' '}
-                  <a className="get-in-touch-terms-link" href="#">
+                  <Link className="get-in-touch-terms-link" to="/terms-of-service">
                     terms &amp; conditions
-                  </a>{' '}
+                  </Link>{' '}
                   provided by Burks Construction Management. By providing my contact information, I agree to receive messages from the business.
                 </label>
               </div>

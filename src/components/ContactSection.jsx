@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './ContactSection.css'
 
 const ContactSection = () => {
@@ -61,9 +62,9 @@ const ContactSection = () => {
               />
               <label className="contact-consent-text" htmlFor="contact-terms">
                 I agree to the{' '}
-                <a className="contact-terms-link" href="#">
+                <Link className="contact-terms-link" to="/terms-of-service">
                   terms &amp; conditions
-                </a>
+                </Link>
               </label>
             </div>
 

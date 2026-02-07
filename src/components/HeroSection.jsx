@@ -29,7 +29,27 @@ const HeroSection = () => {
     window.scrollTo(0, 0)
   }
 
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Detect mobile devices
+  useEffect(() => {
+    const checkMobile = () => {
+      const isMobileDevice = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
+                            (window.innerWidth <= 768 && 'ontouchstart' in window)
+      setIsMobile(isMobileDevice)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   const handleVideoLoad = () => {
+    // On mobile, keep fallback visible longer or don't hide it
+    if (isMobile) {
+      // On mobile, videos often don't autoplay, so keep fallback visible
+      return
+    }
     // Add a small delay to ensure video content is ready before hiding fallback
     setTimeout(() => {
       setVideoLoaded(true)
@@ -38,12 +58,16 @@ const HeroSection = () => {
 
   // Fallback timeout in case iframe onLoad doesn't fire
   useEffect(() => {
+    if (isMobile) {
+      // On mobile, don't hide fallback automatically
+      return
+    }
     const timeout = setTimeout(() => {
       setVideoLoaded(true)
     }, 5000) // Hide fallback after 5 seconds max
 
     return () => clearTimeout(timeout)
-  }, [])
+  }, [isMobile])
 
   return (
     <section id="home" className="hero-section">
@@ -55,15 +79,18 @@ const HeroSection = () => {
           alt="Construction site" 
           className={`hero-fallback-image ${videoLoaded ? 'fade-out' : ''}`}
         />
-        <iframe
-          src="https://player.vimeo.com/video/1071096071?h=acd7363a02&muted=1&autoplay=1&loop=1&background=1&controls=0"
-          className={`hero-video ${videoLoaded ? 'video-loaded' : ''}`}
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-          title="Hero Background Video"
-          onLoad={handleVideoLoad}
-        ></iframe>
+        {!isMobile && (
+          <iframe
+            src="https://player.vimeo.com/video/1071096071?h=acd7363a02&muted=1&autoplay=1&loop=1&background=1&controls=0&playsinline=1"
+            className={`hero-video ${videoLoaded ? 'video-loaded' : ''}`}
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            playsInline
+            title="Hero Background Video"
+            onLoad={handleVideoLoad}
+          ></iframe>
+        )}
         <div className="hero-overlay-dark"></div>
         <div className="hero-overlay"></div>
       </div>
