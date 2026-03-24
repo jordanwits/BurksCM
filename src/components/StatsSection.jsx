@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './StatsSection.css'
 
 const StatsSection = () => {
@@ -22,9 +23,9 @@ const StatsSection = () => {
               <li>Manage</li>
             </ul>
 
-            <button className="stats-cta" type="button">
+            <Link className="stats-cta" to="/contact">
               WORK WITH US
-            </button>
+            </Link>
           </div>
 
           <div className="stats-right">

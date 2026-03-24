@@ -69,6 +69,9 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .stats-right {
