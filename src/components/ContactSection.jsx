@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useWeb3ContactForm } from '../hooks/useWeb3ContactForm'
 import './ContactSection.css'
 
 const ContactSection = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+  const { status, isSubmitting, handleSubmit } = useWeb3ContactForm('Home page')
 
   return (
     <section className="contact-section" aria-label="Request more info">
@@ -59,6 +58,8 @@ const ContactSection = () => {
                 className="contact-checkbox"
                 id="contact-terms"
                 type="checkbox"
+                name="consent"
+                required
               />
               <label className="contact-consent-text" htmlFor="contact-terms">
                 I agree to the{' '}
@@ -68,8 +69,17 @@ const ContactSection = () => {
               </label>
             </div>
 
-            <button className="contact-submit" type="submit">
-              SEND MESSAGE
+            {status && (
+              <p
+                className={`contact-form-status contact-form-status--${status.type}`}
+                role="status"
+              >
+                {status.text}
+              </p>
+            )}
+
+            <button className="contact-submit" type="submit" disabled={isSubmitting}>
+              {isSubmitting ? 'SENDING…' : 'SEND MESSAGE'}
             </button>
           </form>
         </div>

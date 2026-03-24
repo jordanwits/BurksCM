@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useWeb3ContactForm } from '../hooks/useWeb3ContactForm'
 import './GetInTouchSection.css'
 
 const GetInTouchSection = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+  const { status, isSubmitting, handleSubmit } = useWeb3ContactForm('Contact page')
 
   return (
     <section id="appointment" className="get-in-touch-section" aria-label="Get in touch">
@@ -68,6 +67,8 @@ const GetInTouchSection = () => {
                   className="get-in-touch-checkbox"
                   id="get-in-touch-terms"
                   type="checkbox"
+                  name="consent"
+                  required
                 />
                 <label className="get-in-touch-consent-text" htmlFor="get-in-touch-terms">
                   I agree to{' '}
@@ -78,8 +79,21 @@ const GetInTouchSection = () => {
                 </label>
               </div>
 
-              <button className="get-in-touch-submit" type="submit">
-                SEND MESSAGE
+              {status && (
+                <p
+                  className={`get-in-touch-form-status get-in-touch-form-status--${status.type}`}
+                  role="status"
+                >
+                  {status.text}
+                </p>
+              )}
+
+              <button
+                className="get-in-touch-submit"
+                type="submit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'SENDING…' : 'SEND MESSAGE'}
               </button>
             </form>
           </div>
