@@ -27,7 +27,7 @@ const ContactDetailsSection = () => {
             
             <div className="contact-info-item">
               <span className="contact-info-label">Phone:</span>
-              <span className="contact-info-value">+1 (530) 355-0923</span>
+              <span className="contact-info-value">+1 (530) 248-0354</span>
             </div>
             
             <div className="contact-info-item">

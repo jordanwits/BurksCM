@@ -98,8 +98,8 @@ const ProjectsHeroSection = () => {
               </Link>
             </div>
             <div className="projects-nav-phone-section">
-              <a href="tel:5303550923" className="projects-nav-phone-button" onClick={() => setMobileMenuOpen(false)}>
-                (530) 355-0923
+              <a href="tel:5302480354" className="projects-nav-phone-button" onClick={() => setMobileMenuOpen(false)}>
+                (530) 248-0354
               </a>
             </div>
           </div>

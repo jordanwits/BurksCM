@@ -30,9 +30,9 @@ const StatsSection = () => {
           <div className="stats-right">
             <div className="stats-grid">
               <div className="stats-cell">
-                <div className="stats-value">$750M+</div>
+                <div className="stats-value">$900M+</div>
                 <div className="stats-desc">
-                  750 Million USD TDC
+                  900 Million USD TDC
                   <br />
                   (Total Development Cost) in Projects managed
                 </div>
@@ -48,12 +48,12 @@ const StatsSection = () => {
               </div>
 
               <div className="stats-cell">
-                <div className="stats-value">185+</div>
+                <div className="stats-value">225+</div>
                 <div className="stats-desc">Projects Managed</div>
               </div>
 
               <div className="stats-cell">
-                <div className="stats-value">$150M+</div>
+                <div className="stats-value">$200M+</div>
                 <div className="stats-desc">
                   Million in Project/Cost
                   <br />

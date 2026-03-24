@@ -78,8 +78,8 @@ const ContactHeroSection = () => {
               </Link>
             </div>
             <div className="contact-nav-phone-section">
-              <a href="tel:5303550923" className="contact-nav-phone-button" onClick={() => setMobileMenuOpen(false)}>
-                (530) 355-0923
+              <a href="tel:5302480354" className="contact-nav-phone-button" onClick={() => setMobileMenuOpen(false)}>
+                (530) 248-0354
               </a>
             </div>
           </div>

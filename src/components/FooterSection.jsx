@@ -93,8 +93,8 @@ const FooterSection = () => {
             <h3 className="footer-heading">Office</h3>
             <div className="footer-text footer-stack">
               <div>Redding, CA</div>
-              <a className="footer-link" href="tel:15303550923">
-                +1 (530) 355-0923
+              <a className="footer-link" href="tel:15302480354">
+                +1 (530) 248-0354
               </a>
               <a className="footer-link" href="mailto:ryan@burkscm.com">
                 ryan@burkscm.com
