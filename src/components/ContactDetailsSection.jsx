@@ -18,11 +18,16 @@ const ContactDetailsSection = () => {
         <div className="contact-details-content">
           {/* Left Column - Contact Information */}
           <div className="contact-info-column">
-            <h3 className="contact-office-name">Redding Head Office</h3>
+            <h3 className="contact-office-name">Mailing Address</h3>
             
             <div className="contact-info-item">
-              <span className="contact-info-label">Location:</span>
-              <span className="contact-info-value">Redding, CA</span>
+              <span className="contact-info-label">Address:</span>
+              <span className="contact-info-value">PO Box 493129, Redding, CA 96049</span>
+            </div>
+            
+            <div className="contact-info-item">
+              <span className="contact-info-label">Hours:</span>
+              <span className="contact-info-value">Monday-Friday 8AM-4PM</span>
             </div>
             
             <div className="contact-info-item">
@@ -43,14 +48,14 @@ const ContactDetailsSection = () => {
           {/* Right Column - Map */}
           <div className="contact-map-column">
             <iframe
-              src="https://www.google.com/maps?q=Redding,+CA&output=embed"
+              src="https://www.google.com/maps?q=Redding,+CA+96049&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Burks Construction Management - Redding, CA Location"
+              title="Burks Construction Management - Redding, CA 96049 area"
               className="contact-map-iframe"
             ></iframe>
           </div>

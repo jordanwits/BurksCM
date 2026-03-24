@@ -92,7 +92,8 @@ const FooterSection = () => {
           <div className="footer-col">
             <h3 className="footer-heading">Office</h3>
             <div className="footer-text footer-stack">
-              <div>Redding, CA</div>
+              <div>PO Box 493129</div>
+              <div>Redding, CA 96049</div>
               <a className="footer-link" href="tel:15302480354">
                 +1 (530) 248-0354
               </a>
@@ -100,8 +101,7 @@ const FooterSection = () => {
                 ryan@burkscm.com
               </a>
               <div className="footer-spacer" />
-              <div>Mon - Sat 8:00 - 17:30,</div>
-              <div>Sunday - CLOSED</div>
+              <div>Hours: Monday-Friday 8AM-4PM</div>
             </div>
           </div>
 

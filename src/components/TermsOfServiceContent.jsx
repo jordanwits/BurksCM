@@ -8,7 +8,7 @@ const TermsOfServiceContent = () => {
         <div className="terms-text">
           <p>
             Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the{' '}
-            <a href="https://burkscm.com" className="terms-link">https://burkscm.com</a> website (the "Website") operated by Burks Construction Management, a(n) Construction Company located in 888 Dawson Court, Redding, CA 96003, United States, Shasta County County ("us", "we", "our").
+            <a href="https://burkscm.com" className="terms-link">https://burkscm.com</a> website (the "Website") operated by Burks Construction Management, a(n) Construction Company located at PO Box 493129, Redding, CA 96049, United States, Shasta County ("us", "we", "our").
           </p>
           <p>
             These Terms contain important information regarding limitations of our liability.
@@ -106,7 +106,7 @@ const TermsOfServiceContent = () => {
             <p>
               <a href="tel:5303550923" className="terms-link">(530) 355-0923</a>
             </p>
-            <p>888 Dawson Court, Redding, CA 96003, United States</p>
+            <p>PO Box 493129, Redding, CA 96049, United States</p>
             <p>USA</p>
           </div>
 

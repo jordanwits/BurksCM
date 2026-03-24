@@ -8,7 +8,7 @@ const PrivacyPolicyContent = () => {
         <div className="privacy-policy-text">
           <p>
             We value your privacy very highly. Please read this Privacy Policy carefully before using the{' '}
-            <a href="https://burkscm.com" className="privacy-link">https://burkscm.com</a> website (the "Website") operated by Burks Construction Management, a(n) Construction Company located in 888 Dawson Court, Redding, CA 96003, United States, Shasta County County ("us", "we", "our"), as this Privacy Policy contains important information regarding your privacy and how we may use the information we collect about you.
+            <a href="https://burkscm.com" className="privacy-link">https://burkscm.com</a> website (the "Website") operated by Burks Construction Management, a(n) Construction Company located at PO Box 493129, Redding, CA 96049, United States, Shasta County ("us", "we", "our"), as this Privacy Policy contains important information regarding your privacy and how we may use the information we collect about you.
           </p>
 
           <p>
